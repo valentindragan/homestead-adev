@@ -24,3 +24,20 @@
 # Install Node.js v10.x
 #curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
 #sudo apt-get install -y nodejs
+
+cd /usr/share
+LATEST_VERSION=$(curl -sS 'https://api.github.com/repos/phpmyadmin/phpmyadmin/releases/latest' | awk -F '"' '/tag_name/{print $4}')
+DOWNLOAD_URL="https://api.github.com/repos/phpmyadmin/phpmyadmin/tarball/$LATEST_VERSION"
+PHPMYADMIN_SECRET=`openssl rand -base64 32`;
+echo "Downloading phpMyAdmin $LATEST_VERSION"
+sudo wget $DOWNLOAD_URL -q -O 'phpmyadmin.tar.gz'
+sudo tar xf phpmyadmin.tar.gz -C phpmyadmin --strip-components 1
+sudo rm phpmyadmin.tar.gz
+
+echo "Installing dependencies for phpMyAdmin"
+cd phpmyadmin && composer update --no-dev
+
+echo "Generating phpMyAdmin secret code"
+sudo sed -e "s|cfg\['blowfish_secret'\] = ''|cfg['blowfish_secret'] = '${PHPMYADMIN_SECRET}'|" config.sample.inc.php > config.inc.php
+echo "Disable phpMyAdmin CheckConfigurationPermissions"
+sed -i '2i $cfg['CheckConfigurationPermissions'] = false;' config.inc.php
