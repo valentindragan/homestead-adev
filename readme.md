@@ -19,6 +19,12 @@ Example:
 192.168.33.49 mysite.test
 ```
 
+If home folder does not contain a .ssh folder, run the folowing command in cmd, and keep default options
+(no passphrase, id_rsa, id_rsa.pub)
+```
+ssh-keygen
+```
+
 
 
 <p align="center"><img src="https://laravel.com/assets/img/components/logo-homestead.svg"></p>
