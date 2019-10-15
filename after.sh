@@ -26,6 +26,7 @@
 #sudo apt-get install -y nodejs
 
 cd /usr/share
+sudo rm -rf phpmyadmin/*
 LATEST_VERSION=$(curl -sS 'https://api.github.com/repos/phpmyadmin/phpmyadmin/releases/latest' | awk -F '"' '/tag_name/{print $4}')
 DOWNLOAD_URL="https://api.github.com/repos/phpmyadmin/phpmyadmin/tarball/$LATEST_VERSION"
 PHPMYADMIN_SECRET=`openssl rand -base64 32`;
