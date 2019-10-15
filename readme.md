@@ -6,10 +6,17 @@ The customisations are as folows:
     <li>PhpMyAdmin - latest version</li>
 </ul>
 
-Please make sure you have the vagrant nfs plugin installed if using nfs on windows for shared folders.
+Make sure you have the vagrant nfs plugin installed if using nfs on windows for shared folders.
 
 ```
 vagrant plugin install vagrant-winnfsd
+```
+Edit your C:\Windows\System32\drivers\etc hosts file with entries for each of you websites
+Example:
+```
+192.168.33.49 homestead.test
+192.168.33.49 phpmyadmin.test
+192.168.33.49 mysite.test
 ```
 
 
