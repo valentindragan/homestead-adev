@@ -1,3 +1,15 @@
+<h1>Laravel homestead - apache development</h1>
+The customisations are as folows:
+<ul>
+    <li>PhpMyAdmin - latest version</li>
+    <li>Apache multi site</li>
+    <li>SSL True for https developing</li>
+</ul>
+    
+
+
+
+
 <p align="center"><img src="https://laravel.com/assets/img/components/logo-homestead.svg"></p>
 
 <p align="center">
