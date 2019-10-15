@@ -8,10 +8,9 @@ The customisations are as folows:
 
 Please make sure you have the vagrant nfs plugin installed if using nfs on windows for shared folders.
 
-    ```
-    vagrant plugin install vagrant-winnfsd
-    ```
-
+```
+vagrant plugin install vagrant-winnfsd
+```
 
 
 
