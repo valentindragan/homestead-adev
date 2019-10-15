@@ -1,11 +1,16 @@
 <h1>Laravel homestead - apache development</h1>
 The customisations are as folows:
-<ul>
-    <li>PhpMyAdmin - latest version</li>
+<ul>    
     <li>Apache multi site</li>
     <li>SSL True for https developing</li>
+    <li>PhpMyAdmin - latest version</li>
 </ul>
-    
+
+Please make sure you have the vagrant nfs plugin installed if using nfs on windows for shared folders.
+
+    ```
+    vagrant plugin install vagrant-winnfsd
+    ```
 
 
 
