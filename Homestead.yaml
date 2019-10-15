@@ -1,8 +1,10 @@
 ---
-ip: "192.168.10.10"
+ip: "192.168.33.49"
+name: "homestead-apache"
 memory: 2048
 cpus: 2
 provider: virtualbox
+ssl: true
 
 authorize: ~/.ssh/id_rsa.pub
 
@@ -10,12 +12,24 @@ keys:
     - ~/.ssh/id_rsa
 
 folders:
-    - map: ~/code
-      to: /home/vagrant/code
+    - map: share
+      to: /var/www/html
+      type: "nfs"
+    - map: phpmyadmin
+      to: /usr/share/phpmyadmin
+      type: "nfs"
 
 sites:
     - map: homestead.test
-      to: /home/vagrant/code/public
+      to: /var/www/html
+      type: apache
+    - map: phpmyadmin.test
+      to: /usr/share/phpmyadmin
+      type: apache
+    - map: mysite.test
+      to: /var/www/html/mysite
+      type: apache
+
 
 databases:
     - homestead
