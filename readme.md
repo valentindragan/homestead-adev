@@ -4,6 +4,9 @@ The customisations are as folows:
     <li>Apache multi site</li>
     <li>SSL True for https developing</li>
     <li>PhpMyAdmin - latest version</li>
+    <li>PhpMyAdmin - latest version</li>
+    <li>Changed guest root to /var/www/html</li>
+    <li>Root is mapped in host share folder, inside homestead-adev folder - Can be changed to any absolue path: D:/www</li>
 </ul>
 
 Make sure you have the vagrant nfs plugin installed if using nfs on windows for shared folders.
